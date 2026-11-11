@@ -1,0 +1,30 @@
+{
+    "version": "1.42.1",
+    "description": "酷安（Coolapk）第三方跨平台桌面客户端",
+    "homepage": "https://github.com/coolapk-desktop/coolapk-desktop",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/coolapk-desktop/coolapk-desktop/releases/download/v1.42.1/coolapk-desktop_1.42.1_x64-portable.exe#/coolapk-desktop.exe",
+            "hash": "783fb0902a773bc7193c37fd06c5582d4f81dcf8df3681c31912ab5d78e4ab6d"
+        },
+        "arm64": {
+            "url": "https://github.com/coolapk-desktop/coolapk-desktop/releases/download/v1.42.1/coolapk-desktop_1.42.1_arm64-portable.exe#/coolapk-desktop.exe",
+            "hash": "b9c031d57f60b98a09d208d54a6fbc1152bff10368e536ca71dd5961076591bc"
+        }
+    },
+    "checkver": {
+        "github": "https://github.com/coolapk-desktop/coolapk-desktop",
+        "regex": "/releases/tag/v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/coolapk-desktop/coolapk-desktop/releases/download/v$version/coolapk-desktop_$version_x64-portable.exe#/coolapk-desktop.exe"
+            },
+            "arm64": {
+                "url": "https://github.com/coolapk-desktop/coolapk-desktop/releases/download/v$version/coolapk-desktop_$version_arm64-portable.exe#/coolapk-desktop.exe"
+            }
+        }
+    }
+}

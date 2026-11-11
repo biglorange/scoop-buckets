@@ -1,0 +1,38 @@
+name: Verify manifests
+
+on:
+  push:
+    paths:
+      - 'bucket/**.json'
+      - '.github/workflows/verify.yml'
+  pull_request:
+    paths:
+      - 'bucket/**.json'
+
+jobs:
+  verify-manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate manifest JSON
+        shell: pwsh
+        run: |
+          $failed = $false
+          foreach ($f in Get-ChildItem bucket -Filter '*.json') {
+              try {
+                  $m = Get-Content $f.FullName -Raw | ConvertFrom-Json
+                  $missing = @('version', 'description', 'homepage', 'license', 'checkver', 'autoupdate') |
+                      Where-Object { -not $m.PSObject.Properties[$_] }
+                  if ($missing) {
+                      Write-Host "::error file=$($f.FullName)::missing fields: $($missing -join ', ')"
+                      $failed = $true
+                  } else {
+                      Write-Host "OK: $($f.Name) v$($m.version)"
+                  }
+              } catch {
+                  Write-Host "::error file=$($f.FullName)::$($_.Exception.Message)"
+                  $failed = $true
+              }
+          }
+          exit [int]$failed
