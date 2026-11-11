@@ -3,6 +3,12 @@
     "description": "酷安（Coolapk）第三方跨平台桌面客户端",
     "homepage": "https://github.com/coolapk-desktop/coolapk-desktop",
     "license": "MIT",
+    "shortcuts": [
+        [
+            "coolapk-desktop.exe",
+            "酷安"
+        ]
+    ],
     "architecture": {
         "64bit": {
             "url": "https://github.com/coolapk-desktop/coolapk-desktop/releases/download/v1.42.1/coolapk-desktop_1.42.1_x64-portable.exe#/coolapk-desktop.exe",

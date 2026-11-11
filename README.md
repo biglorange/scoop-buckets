@@ -7,7 +7,7 @@
 > 先把下面的 `<用户名>/<仓库名>` 替换为你在 GitHub 上的实际仓库地址。
 
 ```powershell
-scoop bucket add my https://github.com/<用户名>/<仓库名>
+scoop bucket add my https://github.com/biglorange/scoop-buckets
 scoop install my/coolapk-desktop
 ```
 
