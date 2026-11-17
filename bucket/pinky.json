@@ -1,0 +1,32 @@
+{
+    "version": "2026.1117.3",
+    "description": "Pinky：让 AI 智能体在你知情的情况下使用你的手机（iPhone/Android），带 Windows 桌面端与 MCP 接入",
+    "homepage": "https://github.com/DIYgod/pinky",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/DIYgod/pinky/releases/download/v2026.1117.3/pinky-2026.1117.3-windows-amd64.zip",
+            "hash": "d270ed71d5461fba264daaaa99b74dcbea12088f2f66fe1c7b9e6921fc1460ef"
+        }
+    },
+    "shortcuts": [
+        [
+            "Pinky.exe",
+            "Pinky"
+        ]
+    ],
+    "bin": [
+        "Pinky.exe"
+    ],
+    "checkver": {
+        "github": "https://github.com/DIYgod/pinky",
+        "regex": "/releases/tag/v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/DIYgod/pinky/releases/download/v$version/pinky-$version-windows-amd64.zip"
+            }
+        }
+    }
+}

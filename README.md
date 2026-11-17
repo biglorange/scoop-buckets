@@ -18,6 +18,7 @@ bucket 别名（`my`）可以随意改成自己喜欢的名字。
 | 应用 | 说明 | 主页 |
 | --- | --- | --- |
 | [coolapk-desktop](bucket/coolapk-desktop.json) | 酷安（Coolapk）第三方跨平台桌面客户端 | https://github.com/coolapk-desktop/coolapk-desktop |
+| [pinky](bucket/pinky.json) | 让 AI 智能体在你在场时使用你的手机（iPhone/Android），MCP 桌面端 | https://github.com/DIYgod/pinky |
 
 ## 自动更新机制
 
